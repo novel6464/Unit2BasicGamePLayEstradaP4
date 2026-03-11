@@ -14,7 +14,11 @@ public class DestroyOutOfBounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.z > topBound)
+        if (transform.position.z > topBound) // Check if the object's position on the z-axis exceeds the top boundary
+        {
+            Destroy(gameObject); // Destroy the object if it goes out of bounds
+        }
+        else if (transform.position.z < lowerBound) // Check if the object's position on the z-axis is below the lower boundary
         {
             Destroy(gameObject); // Destroy the object if it goes out of bounds
         }
