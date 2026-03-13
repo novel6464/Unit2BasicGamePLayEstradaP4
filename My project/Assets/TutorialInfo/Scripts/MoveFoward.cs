@@ -3,6 +3,7 @@ using UnityEngine;
 public class MoveFoward : MonoBehaviour
 {
     public float speed = 40; // Speed at which the object moves forward
+    public GameObject projectilePrefab; // Reference to the projectile prefab that can be instantiated  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
