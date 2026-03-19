@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class MoveFoward : MonoBehaviour
+public class DetectCollisions : MonoBehaviour
 {
-    public float speed = 10.0f; 
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,6 +12,13 @@ public class MoveFoward : MonoBehaviour
     void Update()
     {
         
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Animal"))
+        {
+            Debug.Log("Game Over!");
+            Destroy(gameObject);
+        }
     }
 }
